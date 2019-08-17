@@ -26,8 +26,8 @@ app.post('/posts', (req, res) => {
 
 app.get('*', (req, res) => {
     res.send('요청 URL이 잘못되었습니다.');
-})
+});
 
 app.listen(3000, () => {
     console.log('server ready on port 3000');
-})
+});
