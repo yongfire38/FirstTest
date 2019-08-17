@@ -2,6 +2,12 @@ const express = require('express');
 const app = express();
 
 
+//루트 요청으로 들어온다면 모든 게시글 보기로 리다이렉트
+app.get('/', (req, res) => {
+    res.redirect('/posts');
+});
+
+
 //모든 게시글 보기
 app.get('/posts', (req, res) => {
 
