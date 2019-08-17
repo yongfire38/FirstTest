@@ -4,7 +4,14 @@ const app = express();
 
 //모든 게시글 보기
 app.get('/posts', (req, res) => {
-    res.send('hello world....안녕하세요');
+
+    const article = {
+        title : '오늘 멋진날...',
+        content: '욤뇸뇸',
+        tag:['인싸감성','쪼와용','오홓홓']
+    }
+
+    res.json(article);
 });
 
 //게시글 상세보기
@@ -16,6 +23,10 @@ app.get('/posts/345212', (req, res) => {
 app.post('/posts', (req, res) => {
     res.send('글이 등록되었습니다.');
 });
+
+app.get('*', (req, res) => {
+    res.send('요청 URL이 잘못되었습니다.');
+})
 
 app.listen(3000, () => {
     console.log('server ready on port 3000');
